@@ -2,6 +2,7 @@ function Sistema(){
     this.usuarios={}; 
     this.agregarUsuario=function(nick){ 
         this.usuarios[nick]=new Usuario(nick); 
+        //this.usuarios[nick].activo=true;
     } 
 
     this.obtenerUsuarios=function(){ 
