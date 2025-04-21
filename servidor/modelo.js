@@ -46,4 +46,5 @@ function Usuario(nick){
     this.nick=nick; 
 }
 
+//Para exportar la función Sistema
 module.exports.Sistema=Sistema

@@ -10,12 +10,14 @@ let sistema = new modelo.Sistema();
 
 app.use(express.static(__dirname + "/")); 
 
+//Sección donde se recoge la información
 app.get("/", function(request,response){ 
     /*
     response.statusCode = 200; 
     response.setHeader('Content-Type', 'text/plain'); 
     response.end('Hola Mundo!'); 
     */
+   //Redirecciona al index.html de la carpera cliente
     var contenido=fs.readFileSync(__dirname+"/cliente/index.html"); 
     response.setHeader("Content-type","text/html"); 
     response.send(contenido); 
@@ -54,6 +56,7 @@ app.get("/eliminarUsuario/:nick",function(request,response){
     response.send(res);
 });
 
+//Muestra porque puerto se esta ejecutando
 app.listen(PORT, () => { 
     console.log(`App está escuchando en el puerto ${PORT}`); 
     console.log('Ctrl+C para salir'); 
