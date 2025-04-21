@@ -62,8 +62,8 @@ function ClienteRest(){
             if(data.list == []){
                 console.log("No hay usuarios")
             }else{
-                for(let i=0; i < data.list.length; i++){
-                    console.log("El usuario "+ i+1 + " es "+data.list[i])
+                for(let i=1; i <= data.list.length; i++){
+                    console.log("El usuario "+ i + " es "+data.list[i-1])
                 }
             }
         })
