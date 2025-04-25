@@ -9,12 +9,15 @@ function ClienteRest(){
                 console.log("Usuario "+nick+" ha sido registrado")
                 //$.cookie("nick",nick);
                 //cw.mostrarHome();
+                msg="Bienvenido al sistema, "+nick;
+                $.cookie("nick", nick);
+                cw.mostrarHome();
                 
             }
             else{
                 console.log("El nick ya está ocupado");
                 //cw.mostrarMsg("El nick esta ocupada", "msg");
-                //cw.comprobarSesion();
+                cw.comprobarSesion();
             }
         });
         // este codigo se ejecuta sin esperar a que se resuelva 
@@ -26,6 +29,7 @@ function ClienteRest(){
             if (data.eliminado){
                 console.log("Usuario "+nick+" a sido eliminado")
                 //$.removeCookie("nick");
+                $.removeCookie("nick");
                 location.reload();
             }else{
                 console.log("Usuario "+nick+ " ya ha sido eliminado")
@@ -37,7 +41,7 @@ function ClienteRest(){
         var cli = this;
         $.getJSON("/numeroUsuarios/", function(data){
             console.log("numero: " + data.num);
-            //cw.mostrarMsg("numero: " + data.num, "msgN");
+            cw.mostrarMsg("numero: " + data.num, "msgN");
         })
     }
      
@@ -56,6 +60,7 @@ function ClienteRest(){
         }
         return res
     }
+
     this.obtenerUsuarios = function(){
         var cli = this;
         $.getJSON("/obtenerUsuarios/", function(data){
@@ -68,4 +73,5 @@ function ClienteRest(){
             }
         })
     }
+
 } 
