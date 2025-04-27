@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js", 
+    "start": "node index.js",
     "testW": "node_modules\\.bin\\jasmine-node servidor",
     "test": "./node_modules/.bin/jasmine-node servidor"
   },
@@ -19,7 +19,12 @@
   },
   "homepage": "https://github.com/emilioddddd/TFG_2#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "cookie-session": "^2.1.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "passport": "^0.5.3",
+    "passport-google-oauth": "^2.0.0",
+    "passport-google-one-tap": "^1.0.1"
   },
   "devDependencies": {
     "jasmine-node": "^3.0.0"

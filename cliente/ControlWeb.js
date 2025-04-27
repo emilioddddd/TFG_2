@@ -6,10 +6,12 @@ function ControlWeb(){
         cadena=cadena+'<label for="nick">Nick:</label>';
         cadena=cadena+'<input type="text" class="form-control" id="nick">';
         cadena=cadena+'<button id="btnAU" type="submit" class="btn btn-primary">Agregar usuario</button>';
+        cadena=cadena + '<div id="btnGS"></div>';
         cadena=cadena+'<div id="msg"></div>'
         cadena=cadena+'</div>';
 
         $("#au").append(cadena);
+        $('#btnGS').load("./cliente/botonGS.html");
         //#au .btn div
         $("#btnAU").on("click",function(){
             let nick=$("#nick").val();
